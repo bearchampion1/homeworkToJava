@@ -1,0 +1,62 @@
+package CompanySystem;
+import java.io.File;
+import java.util.Scanner;
+public class CompanySystem {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int order;
+		String[] employee = new String[2];
+		String input ;
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+			System.out.print("""
+					****歡迎進入公司系統****
+					1) 登入
+					2) 註冊
+					0) 離開
+					請輸入你的選擇[1,2,0]:
+					""");
+			order = sc.nextInt();
+			if (order == 1) {
+				while(true) {
+					boolean checkemp =false;
+					System.out.print("請輸入工號(部門-號碼):");
+					input = sc.nextLine();
+					if(!(input.matches("[A-Z]{2}+-+\\d{6}"))) {
+						System.out.print("格式錯誤");
+						continue;
+					}
+					else {
+						employee=input.split("-");
+						checkemp = MemberService.Login(employee[0] , employee[1] ,sc);
+					}
+					if (checkemp) {
+						break;
+					}
+				}
+				
+				
+				
+				
+			}
+			else if (order == 2) {
+				File dir = new File("C:\\"+"data");
+				if(dir.isDirectory()) {
+				}else {
+					dir.mkdir(); // 如果不存在就創一個
+					}
+				MemberService.register(sc);
+			}
+			else if (order == 0) {
+				System.out.print("系統運作結束");
+				System.exit(0);
+			}
+			else {
+				System.out.println("無此選項，請重新輸入");
+			}
+
+		}
+	}
+
+}

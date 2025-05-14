@@ -1,0 +1,25 @@
+package CompanySystem;
+
+public class Department {
+	public enum DepartmentList{
+		IT(1,"資訊部門"),
+		HR(2,"人力資源"),
+		MA(3,"行銷部門");
+		
+		private int number;
+		private String Department_chinese;
+		
+		DepartmentList(int number , String Department_chinese){
+			this.number = number;
+			this.Department_chinese = Department_chinese;
+		}
+		public int getNumber() {
+			return number;
+		}
+		public String getDepartment_chinese() {
+			return Department_chinese;
+		}
+		
+		
+	}
+}

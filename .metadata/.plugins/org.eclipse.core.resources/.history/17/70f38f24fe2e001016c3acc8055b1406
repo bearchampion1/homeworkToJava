@@ -1,0 +1,28 @@
+package Animal;
+
+public class Duck extends Bird {
+	private String webbing ; 
+	
+	public Duck() {
+		super();
+	}
+	public Duck(String name , String webbing) {
+		super(name);
+		this.webbing = webbing;
+	}
+	
+	public String getWebbing() {
+		return webbing;
+	}
+	public void  setWebbing(String webbing) {
+		this.webbing = webbing;
+	}
+	public void swim() {
+		System.out.println("游泳");
+	}
+	@Override
+	public void wu() {
+		System.out.println("阿~ 阿~");
+	}
+	
+}

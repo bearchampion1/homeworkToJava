@@ -1,0 +1,29 @@
+package CompanySystem;
+
+import java.io.*;
+
+class GeneralStaff implements Serializable {
+		private String Staff_name , password , staff_Department ;
+		private  String numberOfStaff;
+		public GeneralStaff(String Staff_name , String password , String staff_Department , String numberOfStaff){
+			this.Staff_name =Staff_name;
+			this.password = password;
+			this.staff_Department = staff_Department;
+			this.numberOfStaff = numberOfStaff;
+		}
+		
+
+		public String getStaffName() {
+			return Staff_name;
+		}
+		public String getPassword() {
+			return password;
+		}
+		public String getDepartment() {
+			return staff_Department;
+		}
+		public String  getNumber() {
+			return numberOfStaff;
+		}
+		
+}

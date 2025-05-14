@@ -1,0 +1,23 @@
+package Animal;
+
+public class ExtendDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Chicken chicken1 = new Chicken("阿瓜" , "紅色雞冠");
+		Chicken chicken2 = new Chicken();
+		Duck duck1 = new Duck("小鴨" , "短蹼");
+		
+		System.out.printf("小雞1 - 名稱%s, 雞冠是%s \n" , chicken1.getName() , chicken1.getCrest());
+		chicken1.wu();
+		chicken1.fly();
+		
+		
+		System.out.printf("小雞2 - 名稱%s, 雞冠是%s \n" , chicken2.getName() , chicken2.getCrest());
+		chicken2.wu();
+		
+		System.out.printf("小鴨1 - 名稱%s, 蹼是%s \n" , duck1.getName() , duck1.getWebbing());
+		duck1.swim();
+	}
+
+}

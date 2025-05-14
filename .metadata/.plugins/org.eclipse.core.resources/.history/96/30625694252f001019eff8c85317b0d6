@@ -1,0 +1,41 @@
+package CompanySystem;
+
+import java.io.*;
+
+
+
+
+public class Manager extends GeneralStaff {
+
+	public Manager(String Manager_name, String password, String Manager_Department, String numberOfStaff) {
+		super(Manager_name, password, Manager_Department, numberOfStaff);
+	}
+	public static void readData()  {
+		ObjectInputStream input = null;
+		Manager obj = null;
+		File name_file = new File("C:\\data");
+		try {
+			if (name_file.isDirectory()) {
+				String directory[] = name_file.list(); // 把資料夾底下所有檔案列出來
+				for(String directoryname:directory) {// 逐一處理每個檔案
+					System.out.println("*****************************");
+					input = new ObjectInputStream(new FileInputStream("C:\\data\\"+directoryname));
+					try{
+						while(true) { // 讀取檔案中所有的留言物件
+						obj = (Manager) input.readObject();//強制轉型(要先做)
+						System.out.println("Name:"+obj.getName());
+						System.out.println("Date:"+obj.getTime());
+						System.out.println("Message:"+obj.getMessage());
+						}
+					}catch(EOFException eof){
+						continue; // 讀到檔案結束 (End Of File) 就跳出迴圈
+					}	
+				}
+			}				
+		}
+		catch(Exception e){
+			System.out.println("reading object is failed");
+
+		}
+	}
+}

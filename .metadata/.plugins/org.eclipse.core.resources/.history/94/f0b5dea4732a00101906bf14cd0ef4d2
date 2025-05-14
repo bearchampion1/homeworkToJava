@@ -1,0 +1,26 @@
+package CompanySystem;
+
+public class GeneralStaff {
+		private String Staff_name , password , staff_Department ;
+		protected static int numberOfStaff;
+		public GeneralStaff(String Staff_name , String password , String staff_Department , int numberOfStaff){
+			this.Staff_name =Staff_name;
+			this.password = password;
+			this.staff_Department = staff_Department;
+			this.numberOfStaff = numberOfStaff;
+		}
+		
+		public String getStaffName() {
+			return Staff_name;
+		}
+		public String getPassword() {
+			return password;
+		}
+		public String getDepartment() {
+			return staff_Department;
+		}
+		public int  getNumber() {
+			return numberOfStaff;
+		}
+		
+}
